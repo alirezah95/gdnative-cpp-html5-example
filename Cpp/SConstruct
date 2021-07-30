@@ -210,8 +210,8 @@ elif env['platform'] == 'javascript':
     env["CXX"] = "em++"
     env["AR"] = "emar"
     env["RANLIB"] = "emranlib"
-    env.Append(CPPFLAGS=["-s", "SIDE_MODULE=1", '-s', 'ASSERTIONS=2'])
-    env.Append(LINKFLAGS=["-s", "SIDE_MODULE=1", '-s', 'ASSERTIONS=2'])
+    env.Append(CPPFLAGS=["-s", "SIDE_MODULE=1", '-s', 'ASSERTIONS=1'])
+    env.Append(LINKFLAGS=["-s", "SIDE_MODULE=1", '-s', 'ASSERTIONS=1'])
     env["SHOBJSUFFIX"] = ".bc"
     env["SHLIBSUFFIX"] = ".wasm"
     # Use TempFileMunge since some AR invocations are too long for cmd.exe.
@@ -231,8 +231,6 @@ elif env['platform'] == 'javascript':
     env["LIBSUFFIXES"] = ["$LIBSUFFIX"]
     env.Replace(SHLINKFLAGS='$LINKFLAGS')
     env.Replace(SHLINKFLAGS='$LINKFLAGS')
-
-    env['STATIC_AND_SHARED_OBJECTS_ARE_THE_SAME']=1
     
 
 
